@@ -1,67 +1,101 @@
-Maximizing Revenue for Taxi Drivers Through Payment Type Analysis
-Project Overview
-This project analyzes NYC Yellow Taxi trip data to investigate whether the average fare amount differs between passengers who pay by card and those who pay by cash. Python, data visualization, and hypothesis testing are used to explore payment behavior and identify useful business insights.
-Business Problem
-Taxi drivers and operators want to understand whether payment method is associated with differences in trip fare amounts. This analysis compares card and cash transactions to test whether the observed difference in average fares is statistically significant.
-Project Objectives
+
+# Maximizing Revenue for Taxi Drivers Through Payment Type Analysis
+
+## Project Overview
+This project analyzes NYC Yellow Taxi trip data to understand the relationship between payment type and fare amount. Python, data visualization, and hypothesis testing are used to compare card and cash transactions.
+
+## Objectives
 - Compare average fare amounts for card and cash payments.
-- Explore trip distance, trip duration, and passenger-count patterns.
+- Analyze trip distance and passenger count.
 - Visualize payment preferences and fare distributions.
-- Use a statistical hypothesis test to assess the difference in average fares.
-- Translate the findings into practical, data-informed business recommendations.
-Dataset
-The notebook uses NYC Yellow Taxi trip records for January 2020 (yellow_tripdata_2020-01.csv).
-The analysis focuses on fields such as:
+- Perform hypothesis testing to check whether average fares differ significantly.
+- Generate useful business insights from taxi trip data.
+
+## Dataset
+The project uses NYC Yellow Taxi trip data for January 2020.
+
+**Dataset:** `yellow_tripdata_2020-01.csv`
+
+Important features include:
 - Pickup and drop-off datetime
 - Passenger count
 - Trip distance
 - Payment type
 - Fare amount
-Dataset note: The CSV is loaded from a Google Colab path in the notebook. Upload the dataset to your runtime or update the file path before running the notebook. Follow the dataset provider's terms when sharing data.
-Tools and Technologies
+
+## Tools and Technologies
 - Python
 - Jupyter Notebook / Google Colab
-- Pandas — data cleaning and analysis
-- Matplotlib and Seaborn — visualizations
-- SciPy — statistical hypothesis testing
-- Statsmodels — statistical analysis support
-Workflow
-1. Load the taxi trip dataset.
-2. Inspect the data structure and data types.
-3. Convert pickup and drop-off timestamps and calculate trip duration.
-4. Select relevant columns for the analysis.
-5. Filter for card and cash payments and reasonable passenger counts.
-6. Clean invalid values and inspect fare outliers.
-7. Explore fare amounts, trip distances, payment preferences, and passenger counts using charts and summary statistics.
-8. Compare card and cash fare amounts using an independent two-sample Welch's t-test.
-9. Interpret the p-value at a 5% significance level.
-Hypothesis Testing
-Null hypothesis (H₀): The mean fare amount is the same for card and cash trips.
-Alternative hypothesis (H₁): The mean fare amount differs between card and cash trips.
-- Significance level: 0.05
-- Test: Independent two-sample Welch's t-test (equal_var=False)
-- Decision rule: If the p-value is below 0.05, reject the null hypothesis.
-The notebook reports a statistically significant difference in average fare amounts between card and cash trips. This indicates an association in the analyzed data; it does not establish that the payment method itself causes higher fares.
-Key Findings
-- The notebook compares average fare amounts and trip distances by payment type.
-- Visualizations show the distributions of fares, trip distances, payment preferences, and passenger counts.
-- The hypothesis test reports a p-value below the 5% significance level, so the null hypothesis is rejected.
-- The result suggests that average fare amounts differ between card and cash trips in the cleaned sample.
-Business interpretation: Card payments may be associated with higher average fares in this dataset. Drivers and operators could make card payments convenient for passengers, while avoiding claims that changing payment method alone will increase revenue. Trip distance, trip duration, location, time, tips, and other factors may also influence the observed differences.
-How to Run
-1. Download or clone this repository.
-2. Install the required libraries:pip install pandas matplotlib seaborn scipy statsmodels jupyter
-3. Place yellow_tripdata_2020-01.csv in the location expected by the notebook, or update the CSV path in the first data-loading cell.
-4. Open the notebook in Jupyter or Google Colab.
-5. Run the cells in order.
-Repository Contents
-- Maximizing_Revenue_FOR_Drivers_Through_Payment_Type_hypothesis_testing.ipynb — notebook containing the analysis, visualizations, and hypothesis test.
-- yellow_tripdata_2020-01.csv — input dataset, if you choose to include it and are permitted to redistribute it.
-Limitations
-- The analysis identifies differences between groups but does not prove causation.
-- Fare amounts can be affected by trip distance, duration, location, time, surcharges, and other factors.
-- Cleaning rules and outlier removal can affect the results.
-- The findings apply to the selected dataset and period; they may not represent all taxi trips or current behavior.
-Conclusion
-This project demonstrates a complete exploratory data analysis and hypothesis-testing workflow using Python. It compares card and cash taxi trips, visualizes passenger and trip patterns, and evaluates whether average fares differ statistically. The results can inform further investigation into payment behavior and taxi revenue.
-Skills demonstrated: Data Cleaning • Exploratory Data Analysis (EDA) • Data Visualization • Hypothesis Testing • Statistical Analysis • Python
+- Pandas
+- Matplotlib
+- Seaborn
+- SciPy
+- Statsmodels
+
+## Project Workflow
+1. Load the dataset.
+2. Explore the data structure and data types.
+3. Clean the data and handle invalid values.
+4. Calculate trip duration.
+5. Analyze card and cash transactions.
+6. Visualize fare amounts and trip distances.
+7. Perform statistical hypothesis testing.
+8. Interpret the results and identify business insights.
+
+## Hypothesis Testing
+
+**Null Hypothesis (H₀):** The average fare amount is equal for card and cash transactions.
+
+**Alternative Hypothesis (H₁):** The average fare amount differs between card and cash transactions.
+
+- Significance Level: 0.05
+- Statistical Test: Welch's Two-Sample t-test
+
+**Decision Rule:** If the p-value is less than 0.05, reject the null hypothesis.
+
+## Key Findings
+- The project compares average fares for card and cash transactions.
+- Visualizations help identify patterns in fares, trip distances, and payment preferences.
+- The notebook reports a statistically significant difference in average fare amounts between the two payment groups.
+- The results indicate an association between payment type and fare amount, but do not prove that payment type causes higher fares.
+
+## Business Recommendations
+- Make card payments convenient for passengers.
+- Analyze trip distance, duration, and other factors alongside payment type.
+- Use data-driven insights to improve taxi business decisions.
+- Avoid assuming that payment method alone will increase revenue.
+
+## How to Run the Project
+
+### 1. Install the Required Libraries
+
+```bash
+pip install pandas matplotlib seaborn scipy statsmodels jupyter
+```
+
+### 2. Prepare the Dataset
+Download or obtain `yellow_tripdata_2020-01.csv` and update the dataset path in the notebook if necessary.
+
+### 3. Open the Notebook
+Open the `.ipynb` file in Jupyter Notebook or Google Colab.
+
+### 4. Run the Analysis
+Execute the notebook cells in order to reproduce the data analysis, visualizations, and hypothesis test.
+
+## Repository Contents
+- `Maximizing_Revenue_FOR_Drivers_Through_Payment_Type_hypothesis_testing.ipynb` — Jupyter Notebook containing the analysis.
+- `yellow_tripdata_2020-01.csv` — Dataset used for the project, if included.
+
+## Limitations
+- The analysis identifies associations, not causation.
+- Fare amounts may depend on distance, duration, location, time, tips, and other factors.
+- The results apply to the selected dataset and period.
+- Data cleaning and outlier treatment can affect the findings.
+
+## Conclusion
+This project demonstrates data cleaning, exploratory data analysis, data visualization, and statistical hypothesis testing using Python. It explores differences in taxi fares by payment type and provides insights that can support further business analysis.
+
+---
+
+**Skills:** Python | Data Cleaning | EDA | Data Visualization | Hypothesis Testing | Statistical Analysis
+
